@@ -18,5 +18,19 @@ void * removeArrayDuplicates(int *Arr, int len)
 	if (Arr == NULL || len <= 0)
 		return NULL;
 
+	for (int i = 0; i < len; i++){
+		int j = i + 1;
+		while (j < len){
+			if (Arr[i] == Arr[j]){
+				for (int k = j; k < len; k++){
+					Arr[k] = Arr[k + 1];
+				}
+				len--;
+			}
+			else
+				j++;
+		}
+	}
 
+	return 0;
 }
